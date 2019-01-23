@@ -127,7 +127,7 @@ No Customer
 </div>
 
 <div class="footer">
-  <p>Copyright © 2019 The Royal Bank Of Scotland</p>
+  <p>Copyright Â© 2019 </p>
 </div>
 
 </body>
