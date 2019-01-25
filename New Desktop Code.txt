@@ -2,133 +2,254 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script type="text/javascript"
+	src="amazon-connect-v1.2.0-26-g978b2a4.js"></script>
+
 <style>
 body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
 
-.container div{
-position:relative;
-top:20px;}
+	font-family: Arial, Helvetica, sans-serif;
+}
+  .container{
+    margin-left: 0px;
+margin-right: 0px;
+    width: 100%;
+  }
+  .row {
+    display: flex;
+    width: 100%;
+  }
+  
+  .col-lg-4,.col-lg-8 {
+    flex: 1;
+    padding:1em;
+    border: 1px solid red;
+    
+  }
+
+
 .topnav {
-  overflow: hidden;
-  background-color: #14366E;
+	overflow: hidden;
+	background-color: #14366E;
 }
-#grey
-{
 
-padding-left:12px;
-padding-top:10px;
+#grey {
+	padding-left: 12px;
+	padding-top: 10px;
+	background-color: lightgrey;
+}
 
-background-color:lightgrey;
+#AcceptCall {
+	background-color: MediumSeaGreen;
+	font-weight: bold;
+}
+
+#RejectCall {
+	background-color: Tomato;
+	font-weight: bold;
 }
 
 #yellow {
- margin-left: auto;
-  margin-right: auto;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	background-color: #FFFF99;
+}
 
-padding-left:20px;
-padding-right:20px;
-padding-bottom:10px;
-padding-top:10px;
-
-background-color:#FFFF99;
+.toolbarText{
+font-family: "Courier New"
 }
 .topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
 }
-   .footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  height:50px;
-  width: 100%;
-  padding-top:15px;
-  background-color: #14366E;
-  color: white;
-  text-align: center;
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	height: 50px;
+	width: 100%;
+	padding-top: 15px;
+	background-color: #14366E;
+	color: white;
+	text-align: center;
 }
-    
 
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+	background-color: #ddd;
+	color: black;
 }
-#customer {
-background-color: #ADD8E6;
-height:120px;
-margin-top:20px;
-text-align: center;
-vertical-align: middle;
-line-height: 120px;
-font-size: 30px;
-}
-#close {
-padding-top:15px;
-background-color:lightgrey;
-padding-bottom:5px;}
 
+#customer {
+	background-color: #ADD8E6;
+
+	/*margin-top: 20px;*/
+	text-align: top;
+	vertical-align: middle;
+	line-height: 120px;
+	font-size: 30px;
+}
+
+#close {
+	padding-top: 5px;
+	background-color: lightgrey;
+	padding-bottom: 5px;
+}
+
+#ccpContainer {
+	width: 320px;
+	height: 465px;
+	overflow: hidden;
+	float: left;
+	margin-left: 22px;
+	padding: 25px;
+}
 </style>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+
 </head>
 <body>
 
-<div class="topnav">
-  <a class="active" href="#Customers">Customers</a>
-  <a href="#Tools">Tools</a>
-  <a href="#Desktops">Desktops</a>
-  <a href="#Windows">Windows</a>
-</div>
+	<div class="topnav">
+		<a class="active" href="#Customers">Customers</a> <a href="#Tools">Tools</a>
+		<a href="#Desktops">Desktops</a> <a href="#Windows">Windows</a>
+	</div>
 
-<div class = "container">
-<div class = "row">
-<div class = "col-lg-4">
+	<div class="container">
+		<div class="row">
+			<div class=" col-sm-4">
 
-<div id="yellow">
+				<div id="yellow">
+Available
+              asadadfa
+              adaada<br/>
+              adadadad
+					 <h3 id="AgentState"></h3>
 
-<span >?? Not Linked to a phone</span>
+				</div>
+				<div id="grey">
+					<p class="toolbarText">
+					Left IVR:</p>
+					<p id="leftIVRMesage"> <p class="toolbarText">
+					Service:</p>
+					<p id="Service">
+                      
+                      			<div id="close">
+					<input id="AcceptCall" type="button" value="Accept"
+						onclick="acceptContact()"> <input id="RejectCall"
+						type="button" value="Reject" onclick="disconnectContact()">
+				</div>
+				</div>
+	
 
-</div>
-<div id="grey">
-Phone ID: <input type="text" name="fname" width="80%">
- <input type="submit" value="Link to phone"  >
- </div> 
- <div id="close">
- <center>
-<button type="button" ">Close Desktop</button>
-<center>
-</div>
+			</div>
 
-</div>
+			<div class="col-sm-8" id="customer">No Customer</div>
 
-<div class="col-lg-8" id="customer">
+		</div>
 
+	</div> 
+	<section id="ccpContainer">
+		<script type="text/javascript">
+			var container = document.getElementById("ccpContainer");
 
-No Customer
+			connect.core
+					.initCCP(
+							container,
+							{
+								ccpUrl : 'https://telephonycustomccp.awsapps.com/connect/ccp#/',
+								softphone : {
+									allowFramedSoftphone : false,
+									disableRingtone : false
+								}
+							})
 
+			connect.contact(contactEvents);
+			connect.agent(agentEvents);
 
-<div>
+			function agentEvents(agent) {
+				alert(agent.getState().name);
+				var existingAgent = agent;
+				agent.onRefresh(agentOnRefreshEvents);
+			}
+			function contactEvents(contact) {
+				var existingContact = contact;
+			}
 
+			function agentOnRefreshEvents(agent) {
+				document.getElementById("AgentState").innerHTML = agent
+						.getState().name;
 
+			}
+          function acceptContact() {
+          console.log("Clicked accept contact")
+          if(window.myCPP.contact){
+            window.myCPP.contact.accept({
+              success:function () {
+              logMsg("Accepted contact via Streams");
+                phoneStatus = "incall";
+                updateDisplayButtons();
+                removeCalleNumberShake();
+                
+                
+                
+              }, 
+              failure: fucntion () {
+            logMsg("Failed to accept contact via Streams");
+              
+            }
+                                        
+          });
+          }
+          }
+          
+          
+          function disconnectContact() {
+            console.log("Clicked disconnect contact")
+            if(confirm("Are you sure you want to end the call?") == true ){
+              if(window.myCPP.contact){
+                window.myCPP.contact.getAgentConnection().destroy({
+                  success: function () {
+                    logMsg("Disconnected contact via streams");
+                                           phoneStatus = "ready"
+                    updateDisplayButtons();
+                    clearCallerNumber();
 
-</div>
-</div>
+                       
+              },
+                  failure: function () {
+                    logMsg("Failed to disconnect contact via Streams");
+                  }
+            });
+              }
+            }
+          }
+          
+		</script>
+	</section>
 
-</div>
+	<div class="footer">
+		<p>Copyright © 2019</p>
+	</div>
 
-</div>
-
-<div class="footer">
-  <p>Copyright © 2019 </p>
-</div>
 
 </body>
 </html>
+<script type="text/javascript">
+	
+</script>
+
